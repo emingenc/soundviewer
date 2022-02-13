@@ -1,0 +1,17 @@
+# basic gitignores for python
+venv
+.venv
+.venv/*
+env
+
+
+DS_Store
+.DS_Store
+.DS_Store/*
+
+
+
+__pycache__
+.__pycache__
+
+
