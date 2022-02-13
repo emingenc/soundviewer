@@ -49,7 +49,7 @@ soundviewer.sound2image.save_image_from_sound(sound_path)
 ```
 this will save thermo.jpg to your working directory
 
-if you want you can specifiy the output path and image name `soundviewer.sound2image(sound_path,output='./test.jpg')`
+if you want you can specifiy the output path and image name `soundviewer.sound2image.save_image_from_sound(sound_path,output='./test.jpg')`
 
 here is the output image for sample data thermo.wav
 
