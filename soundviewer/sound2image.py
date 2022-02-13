@@ -85,7 +85,8 @@ def save_image_from_sound(sound_path,show_image=False,output=""):
 
     cv2.imwrite(filename, x)
     return x
-    
+
+sound_to_image = save_image_from_sound
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

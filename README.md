@@ -4,7 +4,7 @@
 
 Python package for converting sound to image and image to sound.
 
-For now only sound to image is available.
+for longer sounds try to split them into smaller parts.
 
 ![](https://c.tenor.com/5eU8wSWY8zkAAAAC/wow-cool.gif)
 
@@ -50,20 +50,41 @@ if you want to save without showing the image, remove `--show`
 
 or with `--output` flag you can specify custom name and spesific path
 
+
+image to sound
+
+```bash
+python3 -m soundviewer.image2sound --input sample_data/thermo.png --output sample_data/thermo.wav
+
+or
+
+python3 soundviewer/image2sound.py --input sample_data/thermo.png --output sample_data/thermo.wav
+```
+
+this will save thermo.wav to your working directory if --output is not specified
+
 ### use it on your python script
 
 ```python3
 import soundviewer
 sound_path = 'sample_data/thermo.wav'
-soundviewer.sound2image.save_image_from_sound(sound_path)
+soundviewer.souund_to_image(sound_path)
 ```
 this will save thermo.jpg to your working directory
 
 if you want you can specify the output path and image name `soundviewer.sound2image.save_image_from_sound(sound_path,output='./test.jpg')`
 
+image to sound
+
+```python3
+import soundviewer
+sound_path = 'sample_data/thermo.png'
+soundviewer.image_to_sound(sound_path)
+```
+
 here is the output image for sample data thermo.wav
 
-![sound to image](https://raw.githubusercontent.com/emingenc/soundviewer/master/sample_data/thermo.jpg)
+![sound to image](https://raw.githubusercontent.com/emingenc/soundviewer/master/sample_data/thermo.png)
 
 
 
