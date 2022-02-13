@@ -2,9 +2,9 @@
 
 # Soundviewer
 
-python package for converting sound to image and image to sound.
+Python package for converting sound to image and image to sound.
 
-for now sound to image is only available.
+For now only sound to image is available.
 
 ![](https://c.tenor.com/5eU8wSWY8zkAAAAC/wow-cool.gif)
 
@@ -19,9 +19,19 @@ git clone +https://github.com/emingenc/soundviewer.git
 pip3 install -e soundviewer
 ```
 
+### Linux post-install
+
+On a base linux install you may be missing `libsnd`.
+
+On Ubuntu and Debian this can be fixed via:
+
+```
+sudo apt-get install libsndfile1-dev
+```
+
 ## Getting Started
 
-### run from local clone
+### Run from local clone
 
 ```bash
 cd soundviewer
@@ -32,13 +42,13 @@ python3 -m soundviewer.sound2image --input sample_data/thermo.wav --show
 
 or
 
-python3 soundviewer/sound2image.py --input sample_data/thermo.wav --show 
+python3 soundviewer/sound2image.py --input sample_data/thermo.wav --show
 
 ```
 
-if you want to save without showing the image, remove --show
+if you want to save without showing the image, remove `--show`
 
-or with --output flag you can specify custom name and spesific path
+or with `--output` flag you can specify custom name and spesific path
 
 ### use it on your python script
 
@@ -49,7 +59,7 @@ soundviewer.sound2image.save_image_from_sound(sound_path)
 ```
 this will save thermo.jpg to your working directory
 
-if you want you can specifiy the output path and image name `soundviewer.sound2image.save_image_from_sound(sound_path,output='./test.jpg')`
+if you want you can specify the output path and image name `soundviewer.sound2image.save_image_from_sound(sound_path,output='./test.jpg')`
 
 here is the output image for sample data thermo.wav
 
