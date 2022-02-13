@@ -11,19 +11,23 @@ except Exception:
     long_description = ''
 
 #reuirements txt list from requirements.txt
-with open(os.path.join(current_directory, 'requirements.txt'), encoding='utf-8') as f:
-    requirements = f.read().splitlines()
+with open('requirements.txt','r') as f:
+    requirements = f.readlines()
+    requirements = [r.strip() for r in requirements if r.strip() ]
 
 
 setup(
-    name='soundviewer',
+    name='soundviewer', 
+
+     #  List of packages to install with this one read it from requirements.txt dynamically
+    install_requires=requirements,
 
     # Packages to include into the distribution
-    packages=find_packages('.'), 
+    packages=find_packages(include=['soundviewer']),
 
     # Start with a small number and increase it with every change you make
     # https://semver.org
-    version='1.0.0',
+    version='1.0.1',
 
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     # For example: GPL
@@ -50,10 +54,6 @@ setup(
 
     # List of keyword arguments
     keywords=[],
-
-    #  List of packages to install with this one read it from requirements.txt dynamically
-    install_requires=requirements,
-    
 
     # https://pypi.org/classifiers/
     classifiers=[]  )

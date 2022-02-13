@@ -64,9 +64,13 @@ def rename_file(img_name):
     return img_name
 
 
-def save_image_from_sound(sound_path,show_image=False):
+def save_image_from_sound(sound_path,show_image=False,output=""):
     info = audio_metadata.load(sound_path)
-    filename = rename_file(sound_path)
+    output = output.strip()
+    if output:
+        filename = output
+    else:
+        filename = rename_file(sound_path)
     wav_conf = Conf(int(info.streaminfo.sample_rate), int(info.streaminfo.duration))
     x = read_as_melspectrogram(
         wav_conf, sound_path, trim_long_data=False)
@@ -83,7 +87,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, default="",  help="input sound file path")
     parser.add_argument("--show", action="store_true", default=False, help="show image")
+    parser.add_argument("--output", type=str, default="",  help="output image file path")
     args = parser.parse_args()
 
-    save_image_from_sound(args.input,show_image=args.show)
+    save_image_from_sound(args.input,show_image=args.show,output=args.output)
 

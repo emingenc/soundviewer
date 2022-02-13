@@ -38,14 +38,18 @@ python3 soundviewer/sound2image.py --input sample_data/thermo.wav --show
 
 if you want to save without showing the image, remove --show
 
+or with --output flag you can specify custom name and spesific path
+
 ### use it on your python script
 
 ```python3
 import soundviewer
 sound_path = 'sample_data/thermo.wav'
-soundviewer.sound2image(sound_path)
+soundviewer.sound2image.save_image_from_sound(sound_path)
 ```
 this will save thermo.jpg to your working directory
+
+if you want you can specifiy the output path and image name `soundviewer.sound2image(sound_path,output='./test.jpg')`
 
 here is the output image for sample data thermo.wav
 
