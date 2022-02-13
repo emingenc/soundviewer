@@ -48,7 +48,7 @@ soundviewer.sound2image(sound_path)
 
 here is the output image for sample data thermo.wav
 
-![sample_data/thermo.jpg](sample_data/thermo.jpg)
+![sound to image](https://raw.githubusercontent.com/emingenc/soundviewer/master/sample_data/thermo.jpg)
 
 
 
