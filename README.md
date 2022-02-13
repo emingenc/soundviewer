@@ -45,6 +45,7 @@ import soundviewer
 sound_path = 'sample_data/thermo.wav'
 soundviewer.sound2image(sound_path)
 ```
+this will save thermo.jpg to your working directory
 
 here is the output image for sample data thermo.wav
 
