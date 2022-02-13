@@ -67,7 +67,6 @@ def rename_file(img_name):
 def save_image_from_sound(sound_path,show_image=False):
     info = audio_metadata.load(sound_path)
     filename = rename_file(sound_path)
-    from pprint import pprint
     wav_conf = Conf(int(info.streaminfo.sample_rate), int(info.streaminfo.duration))
     x = read_as_melspectrogram(
         wav_conf, sound_path, trim_long_data=False)
