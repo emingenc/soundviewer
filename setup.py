@@ -10,6 +10,11 @@ try:
 except Exception:
     long_description = ''
 
+#reuirements txt list from requirements.txt
+with open(os.path.join(current_directory, 'requirements.txt'), encoding='utf-8') as f:
+    requirements = f.read().splitlines()
+
+
 setup(
     name='soundviewer',
 
@@ -46,8 +51,9 @@ setup(
     # List of keyword arguments
     keywords=[],
 
-    # List of packages to install with this one
-    install_requires=[],
+    #  List of packages to install with this one read it from requirements.txt dynamically
+    install_requires=requirements,
+    
 
     # https://pypi.org/classifiers/
     classifiers=[]  )
