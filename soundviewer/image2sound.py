@@ -1,10 +1,8 @@
 import librosa
 import cv2
-from pendulum import duration
-from soundviewer.sound2image import Conf
 import numpy as np
-import soundfile
 import argparse
+import soundfile
 
 
 def rename_file(img_name):
@@ -17,23 +15,14 @@ def rename_file(img_name):
 def image_to_sound(image_path, output = ''):
 
         m=cv2.imread(image_path,0)
-        duration = m.shape[-1]/250
-        conf = Conf( duration=duration)
-        img=m.astype(np.float32)
+        img=m.astype(np.float64)
         output = output.strip()
         if output:
             filename = output
         else:
             filename = rename_file(image_path)
-
-        sound=librosa.feature.inverse.mel_to_audio(img,
-                                                sr=conf.sampling_rate,
-                                                hop_length=conf.hop_length,
-                                                n_fft=conf.n_fft,
-                                                pad_mode='reflect',
-                                                )
-        samplerate = int(conf.sampling_rate/2)
-        soundfile.write(filename,sound,samplerate=samplerate)
+        sound=librosa.feature.inverse.mel_to_audio(img,)
+        soundfile.write(filename,sound,samplerate=22050)
         return filename , sound
 
 
