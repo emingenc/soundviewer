@@ -38,17 +38,16 @@ cd soundviewer
 pip3 install -r requirements.txt
 
 
-python3 -m soundviewer.sound2image --input sample_data/thermo.wav --show
+python3 -m soundviewer.sound2image --input sample_data/thermo.wav 
 
 or
 
-python3 soundviewer/sound2image.py --input sample_data/thermo.wav --show
+python3 soundviewer/sound2image.py --input sample_data/thermo.wav
 
 ```
 
-if you want to save without showing the image, remove `--show`
 
-or with `--output` flag you can specify custom name and spesific path
+with `--output` flag you can specify custom name and spesific path
 
 
 image to sound
